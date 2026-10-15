@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Codex Knowledge Syncのプライバシーポリシーです。">
+  <link rel="canonical" href="https://codex-knowledge-sync.com/privacy.html">
+  <title>プライバシーポリシー | Codex Knowledge Sync</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Codex Knowledge Sync ホーム">
+        <span class="brand-mark" aria-hidden="true">CK</span>
+        <span>Codex Knowledge Sync</span>
+      </a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="index.html">概要</a>
+        <a href="privacy.html" aria-current="page">プライバシー</a>
+        <a href="terms.html">利用規約</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="document">
+      <header class="document-header">
+        <p class="eyebrow">Privacy policy</p>
+        <h1>プライバシーポリシー</h1>
+        <p class="document-lead">
+          本ポリシーは、個人用ツール「Codex Knowledge Sync」におけるGoogleユーザーデータの取り扱いを説明します。
+        </p>
+        <p class="updated">制定日・最終更新日: 2026年10月15日</p>
+      </header>
+
+      <section>
+        <h2>1. ツールの性質</h2>
+        <p>
+          Codex Knowledge Syncは、所有者本人だけがWindows PC上で使用する非公開の個人用ツールです。
+          一般利用者向けのサービス、ユーザー登録、ログイン機能、第三者へのソフトウェア提供は行っていません。
+          このWebサイトはツールの用途とデータ取り扱いを説明する静的サイトです。
+        </p>
+      </section>
+
+      <section>
+        <h2>2. アクセスするGoogleユーザーデータ</h2>
+        <p>
+          ツールは、rcloneを通じて所有者本人のGoogle Driveへアクセスします。
+          使用するOAuth権限は、技術上、Drive内のファイルを表示・管理できる広い権限です。
+        </p>
+        <p>実際の同期処理では、次のデータだけを取り扱います。</p>
+        <ul>
+          <li>Google Drive内の知識同期専用フォルダ</li>
+          <li><code>INDEX.md</code></li>
+          <li><code>COMMON_KNOWLEDGE.md</code></li>
+          <li><code>COMMON_LESSONS.md</code></li>
+          <li>上記ファイルの名前、ID、更新日時、サイズ、ハッシュなど、同期確認に必要なメタデータ</li>
+        </ul>
+        <p>
+          専用フォルダと3ファイルへの限定は、Google OAuth権限そのものによる制限ではありません。
+          rcloneの同期先設定と、実行時の許可リストによる運用上の制限です。
+        </p>
+      </section>
+
+      <section>
+        <h2>3. 利用目的</h2>
+        <p>Googleユーザーデータは、次の目的に限って利用します。</p>
+        <ul>
+          <li>ローカルの3つのMarkdownファイルを専用Driveフォルダへ一方向同期するため</li>
+          <li>同名ファイルの有無、Drive ID、内容の一致を確認するため</li>
+          <li>同期対象ファイルを作成または更新するため</li>
+          <li>同期前のバックアップおよび同期結果を検証するため</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. 保存場所と認証情報</h2>
+        <p>
+          Markdownファイルは所有者本人のWindows PCとGoogle Driveに保存されます。
+          OAuthクライアントID、クライアントシークレットおよびOAuthトークンは、公開サイトやGitHubリポジトリには保存しません。
+          OAuthトークンは、所有者本人のPC上にあるrcloneのローカル設定で管理されます。
+        </p>
+      </section>
+
+      <section>
+        <h2>5. 共有、販売および広告利用</h2>
+        <p>
+          Google Driveから取得したデータを販売せず、広告配信、広告効果測定、信用評価または第三者向けプロファイリングに利用しません。
+          また、法令上必要な場合を除き、Googleユーザーデータを第三者へ提供しません。
+        </p>
+      </section>
+
+      <section>
+        <h2>6. 公開サイトでのデータ収集</h2>
+        <p>
+          このサイトには、入力フォーム、独自のアクセス解析、広告、トラッキングCookieを設置していません。
+          ただし、サイトのホスティングにGitHub Pagesを使用する場合、GitHubがサービス提供に伴うアクセス情報を取り扱うことがあります。
+          その取り扱いは<a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーステートメント</a>に従います。
+        </p>
+      </section>
+
+      <section>
+        <h2>7. 保持、削除およびアクセス取消し</h2>
+        <p>
+          ファイルの保持期間は一律に設定していません。所有者本人がローカル環境およびGoogle Drive上で管理します。
+          Googleアカウントの設定から本ツールのアクセス権を取り消すことができます。
+          アクセス権の取消しは将来のアクセスを停止しますが、既存のローカルファイルまたはDriveファイルを自動的に削除するものではありません。
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Google API Services User Data Policy</h2>
+        <p>
+          Google APIから取得した情報の利用は、Limited Use要件を含む
+          <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>に従います。
+        </p>
+      </section>
+
+      <section>
+        <h2>9. ポリシーの変更</h2>
+        <p>
+          ツールの利用目的またはデータ取り扱いに変更がある場合、本ページを更新します。
+          実際の取り扱いと異なる説明にならないよう、必要に応じて内容を見直します。
+        </p>
+      </section>
+
+      <section>
+        <h2>10. お問い合わせ</h2>
+        <p>
+          本ツールと本ポリシーに関する連絡は、
+          <a href="https://github.com/takahashi906-blip/codex-knowledge-sync-site/issues">公開GitHubリポジトリのIssues</a>から受け付けます。
+          公開Issueには秘密情報、OAuthトークン、個人情報を記載しないでください。
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <span>© 2026 Codex Knowledge Sync</span>
+      <nav class="footer-links" aria-label="フッターナビゲーション">
+        <a href="index.html">概要</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

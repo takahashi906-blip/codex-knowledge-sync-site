@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Codex Knowledge Syncは、個人利用のWindows環境で3つのMarkdown知識ファイルをGoogle Driveへ一方向同期するためのrclone構成です。">
+  <link rel="canonical" href="https://codex-knowledge-sync.com/">
+  <title>Codex Knowledge Sync</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Codex Knowledge Sync ホーム">
+        <span class="brand-mark" aria-hidden="true">CK</span>
+        <span>Codex Knowledge Sync</span>
+      </a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="index.html" aria-current="page">概要</a>
+        <a href="privacy.html">プライバシー</a>
+        <a href="terms.html">利用規約</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Personal knowledge sync</p>
+        <h1 id="hero-title">知識ファイルを、ひとつの場所へ。</h1>
+        <p class="hero-copy">
+          Codex Knowledge Syncは、所有者本人がWindows上で使用する個人用ツールです。
+          ローカルにある3つのMarkdownファイルを、rcloneを使ってGoogle Driveの専用フォルダへ一方向に同期します。
+          一般向けのサービス、ソフトウェア配布、または第三者向けのアカウント機能は提供しません。
+        </p>
+        <div class="badge-row" aria-label="特徴">
+          <span class="badge">個人利用のみ</span>
+          <span class="badge">Windows + rclone</span>
+          <span class="badge">ローカル → Google Drive</span>
+        </div>
+      </div>
+
+      <div class="flow-card" aria-label="同期の流れ">
+        <p class="flow-label">SYNC FLOW</p>
+        <div class="flow-step">
+          <span class="flow-icon" aria-hidden="true">01</span>
+          <div><strong>ローカルファイル</strong><span>Windows上のMarkdown 3ファイル</span></div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-step">
+          <span class="flow-icon" aria-hidden="true">02</span>
+          <div><strong>rclone copy</strong><span>許可リストを使った一方向コピー</span></div>
+        </div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-step">
+          <span class="flow-icon" aria-hidden="true">03</span>
+          <div><strong>Google Drive</strong><span>指定した専用フォルダ</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="purpose-title">
+      <div class="section-heading">
+        <p class="eyebrow">Purpose</p>
+        <h2 id="purpose-title">用途とデータの流れ</h2>
+        <p>同期する内容と処理範囲を明確にし、目的外の利用を行いません。</p>
+      </div>
+      <div class="grid-three">
+        <article class="info-card">
+          <h3>同期元</h3>
+          <p>所有者本人のWindows PCに保存された共通知識のMarkdownファイルです。</p>
+        </article>
+        <article class="info-card">
+          <h3>処理</h3>
+          <p>手動で実行するrclone copyにより、ローカルからDriveへ一方向にコピーします。</p>
+        </article>
+        <article class="info-card">
+          <h3>同期先</h3>
+          <p>所有者本人のGoogle Drive内にある、知識同期専用フォルダです。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="files-title">
+      <div class="section-heading">
+        <p class="eyebrow">Allowlist</p>
+        <h2 id="files-title">同期対象は3ファイル</h2>
+        <p>rcloneの実行時にファイル名の許可リストを指定し、次の3ファイルだけを同期対象とします。</p>
+      </div>
+      <ul class="file-list" aria-label="同期対象ファイル">
+        <li>INDEX.md</li>
+        <li>COMMON_KNOWLEDGE.md</li>
+        <li>COMMON_LESSONS.md</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="access-title">
+      <div class="section-heading">
+        <p class="eyebrow">Google Drive access</p>
+        <h2 id="access-title">アクセス権限について</h2>
+      </div>
+      <div class="notice">
+        <strong>OAuth権限と実際の処理範囲は異なります。</strong>
+        <p>
+          このツールが使用するGoogle DriveのOAuth権限は、技術上、Google Drive内の広い範囲にアクセスできます。
+          一方、実際の同期処理は、rcloneの同期先を専用フォルダに設定し、実行コマンドで上記3ファイルだけを許可することで限定しています。
+          この限定はGoogleによる権限上の制限ではなく、ローカルのrclone設定と運用による制限です。
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="use-title">
+      <div class="section-heading">
+        <p class="eyebrow">Data use</p>
+        <h2 id="use-title">Googleユーザーデータの利用目的</h2>
+      </div>
+      <div class="grid-three">
+        <article class="info-card">
+          <h3>同期のためだけに使用</h3>
+          <p>対象ファイルの確認、比較、作成または更新にのみ使用します。</p>
+        </article>
+        <article class="info-card">
+          <h3>広告・販売に不使用</h3>
+          <p>Google Driveのデータを広告、販売、プロファイリングに利用しません。</p>
+        </article>
+        <article class="info-card">
+          <h3>公開サイトとは分離</h3>
+          <p>このWebサイトは静的な説明ページであり、Google DriveやOAuthトークンへアクセスしません。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <span>© 2026 Codex Knowledge Sync</span>
+      <nav class="footer-links" aria-label="フッターナビゲーション">
+        <a href="index.html">概要</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
